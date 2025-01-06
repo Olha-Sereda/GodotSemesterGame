@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3qiaobymckju"]
+
+[ext_resource type="Script" path="res://scenes/hammerTrap.gd" id="1_4x6bi"]
+[ext_resource type="Texture2D" uid="uid://dtiepeqqgpdae" path="res://assets/Hammer.png" id="1_upuh1"]
+
+[sub_resource type="Animation" id="Animation_fw2bp"]
+resource_name = "HammerTrap"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.4, 0.5, 0.633333, 0.766667, 0.866667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.4, 0.5, 0.633333, 0.766667, 0.866667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, -15.5), Vector2(0, -5), Vector2(0, 0), Vector2(0, -1.29167), Vector2(0, 0), Vector2(0, -5), Vector2(0, -10), Vector2(0, -15), Vector2(0, -16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3, 0.4, 0.5, 0.633333, 0.766667, 0.866667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1, 1), Vector2(1, 1.67), Vector2(1, 2), Vector2(1, 1.98), Vector2(1, 2), Vector2(1, 1.69), Vector2(1, 1.35), Vector2(1, 1.04), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s2s1c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -15.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ak7m2"]
+_data = {
+"HammerTrap": SubResource("Animation_fw2bp"),
+"RESET": SubResource("Animation_s2s1c")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgw2r"]
+size = Vector2(30, 31)
+
+[node name="HammerTrap" type="Area2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CollisionShape2D")
+libraries = {
+"": SubResource("AnimationLibrary_ak7m2")
+}
+autoplay = "HammerTrap"
+script = ExtResource("1_4x6bi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_upuh1")
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15.5)
+shape = SubResource("RectangleShape2D_lgw2r")
