@@ -212,7 +212,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8ed2"]
-size = Vector2(22, 32.5)
+size = Vector2(15, 32)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -221,10 +221,9 @@ script = ExtResource("1_2c2es")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["player"]]
 position = Vector2(4, -24)
 sprite_frames = SubResource("SpriteFrames_k0i83")
-animation = &"dying"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.188885
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
-position = Vector2(-5, -16.75)
+position = Vector2(-6.5, -17)
 shape = SubResource("RectangleShape2D_b8ed2")
