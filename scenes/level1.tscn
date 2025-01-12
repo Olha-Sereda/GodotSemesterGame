@@ -1,16 +1,16 @@
 [gd_scene load_steps=12 format=4 uid="uid://bekx6fdtkdobo"]
 
-[ext_resource type="PackedScene" uid="uid://r62c3iibuhyb" path="res://scenes/player.tscn" id="1_0bihj"]
-[ext_resource type="Texture2D" uid="uid://cthcvol081ldg" path="res://assets/Background.png" id="1_en77o"]
-[ext_resource type="PackedScene" uid="uid://c1aw5aa3jhdc5" path="res://scenes/game_manadger.tscn" id="1_f1348"]
-[ext_resource type="Texture2D" uid="uid://b1dphhgoo6kj6" path="res://assets/Tiles (1).png" id="2_y7xc0"]
-[ext_resource type="PackedScene" uid="uid://bytb7qbid6n0n" path="res://scenes/killzone.tscn" id="3_k83qp"]
-[ext_resource type="PackedScene" uid="uid://cqjcrc5ipjaap" path="res://scenes/entry.tscn" id="5_b8l1u"]
-[ext_resource type="PackedScene" uid="uid://b3qiaobymckju" path="res://scenes/hammer.tscn" id="6_luagm"]
-[ext_resource type="PackedScene" uid="uid://ctum33to6grsl" path="res://scenes/money.tscn" id="7_sdxut"]
+[ext_resource type="PackedScene" uid="uid://c1aw5aa3jhdc5" path="res://scenes/game_manadger.tscn" id="1_fxqfm"]
+[ext_resource type="Texture2D" uid="uid://cthcvol081ldg" path="res://assets/Background.png" id="2_bn2px"]
+[ext_resource type="PackedScene" uid="uid://r62c3iibuhyb" path="res://scenes/player.tscn" id="3_bm80c"]
+[ext_resource type="Texture2D" uid="uid://b1dphhgoo6kj6" path="res://assets/Tiles (1).png" id="4_01nen"]
+[ext_resource type="PackedScene" uid="uid://bytb7qbid6n0n" path="res://scenes/killzone.tscn" id="5_hphn2"]
+[ext_resource type="PackedScene" uid="uid://cqjcrc5ipjaap" path="res://scenes/entry.tscn" id="6_uwk7i"]
+[ext_resource type="PackedScene" uid="uid://b3qiaobymckju" path="res://scenes/hammer.tscn" id="7_in1eq"]
+[ext_resource type="PackedScene" uid="uid://ctum33to6grsl" path="res://scenes/money.tscn" id="8_om68i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tkjy"]
-texture = ExtResource("2_y7xc0")
+texture = ExtResource("4_01nen")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -183,17 +183,40 @@ sources/1 = SubResource("TileSetAtlasSource_4tkjy")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2xdia"]
 
 [node name="Game" type="Node2D"]
-position = Vector2(411, 348)
+position = Vector2(575, 325)
 
-[node name="GameManadger" parent="." instance=ExtResource("1_f1348")]
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 579.0
+offset_top = -315.0
+offset_right = 1730.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bn2px")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -573.0
+offset_top = -315.0
+offset_right = 578.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bn2px")
+
+[node name="GameManadger" parent="." instance=ExtResource("1_fxqfm")]
 unique_name_in_owner = true
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(87, -66)
-scale = Vector2(1.72531, 1.72531)
-texture = ExtResource("1_en77o")
-
-[node name="Player" parent="." instance=ExtResource("1_0bihj")]
+[node name="Player" parent="." instance=ExtResource("3_bm80c")]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(-71, -4)
@@ -205,11 +228,11 @@ limit_bottom = 450
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 light_mask = 2
 visibility_layer = 2
-tile_map_data = PackedByteArray("AAD8/wEAAQAEAAIAAAD9/wEAAQAEAAIAAAD8/wAAAQAEAAAAAAD9/wAAAQAEAAAAAAD+/wAAAQAFAAAAAAD7/wEAAQADAAIAAAD+/wEAAQAFAAIAAAD//wEAAQABAAAAAAAAAAEAAQABAAEAAAABAAEAAQACAAEAAAACAAAAAQADAAAAAAADAAAAAQAEAAAAAAAEAAAAAQAHAAIAAAAFAAAAAQAEAAAAAAAGAAAAAQAFAAAAAAACAAEAAQADAAIAAAADAAEAAQAEAAIAAAAEAAEAAQAEAAIAAAAGAAEAAQAFAAIAAAAFAAEAAQAEAAIAAAAHAAEAAQAGAAUAAAD7/wAAAQADAAAAAAD7//3/AQAEAAQAAAD8//3/AQAEAAQAAAD9//3/AQAEAAQAAAD+//3/AQAEAAQAAAD///3/AQAEAAQAAAAAAP3/AQAEAAQAAAABAP3/AQAEAAQAAAACAP3/AQAEAAQAAAADAP3/AQAEAAQAAAAEAP3/AQAEAAQAAAAFAP3/AQAEAAQAAAAGAP3/AQAEAAQAAAAHAP3/AQAEAAQAAAAIAAEAAQAEAAQAAAAJAAEAAQAEAAQAAAAJAAAAAQAEAAQAAAAKAAAAAQAEAAQAAAAKAAEAAQAEAAQAAAAKAP//AQAEAAQAAAAIAP3/AQAEAAQAAAAIAPz/AQAEAAQAAAD6/wEAAQAEAAQAAAD5/wEAAQAEAAQAAAD5/wAAAQAEAAQAAAD4/wAAAQAEAAQAAAD4/wEAAQAEAAQAAAD4////AQAEAAQAAAD3////AQAEAAQAAAD3/wAAAQAEAAQAAAD3/wEAAQAEAAQAAAA=")
+tile_map_data = PackedByteArray("AAD8/wEAAQAEAAIAAAD9/wEAAQAEAAIAAAD8/wAAAQAEAAAAAAD9/wAAAQAEAAAAAAD+/wAAAQAFAAAAAAD7/wEAAQADAAIAAAD+/wEAAQAFAAIAAAD//wEAAQABAAAAAAAAAAEAAQABAAEAAAABAAEAAQACAAEAAAACAAAAAQADAAAAAAADAAAAAQAEAAAAAAAEAAAAAQAHAAIAAAAFAAAAAQAEAAAAAAAGAAAAAQAFAAAAAAACAAEAAQADAAIAAAADAAEAAQAEAAIAAAAEAAEAAQAEAAIAAAAGAAEAAQAFAAIAAAAFAAEAAQAEAAIAAAAHAAEAAQAGAAUAAAD7/wAAAQADAAAAAAD7//3/AQAEAAQAAAD8//3/AQAEAAQAAAD9//3/AQAEAAQAAAD+//3/AQAEAAQAAAD///3/AQAEAAQAAAAAAP3/AQAEAAQAAAABAP3/AQAEAAQAAAACAP3/AQAEAAQAAAADAP3/AQAEAAQAAAAEAP3/AQAEAAQAAAAFAP3/AQAEAAQAAAAGAP3/AQAEAAQAAAAHAP3/AQAEAAQAAAAIAAEAAQAEAAQAAAAJAAEAAQAEAAQAAAAJAAAAAQAEAAQAAAAKAAAAAQAEAAQAAAAKAAEAAQAEAAQAAAAKAP//AQAEAAQAAAAIAP3/AQAEAAQAAAAIAPz/AQAEAAQAAAD6/wEAAQAEAAQAAAD5/wEAAQAEAAQAAAD5/wAAAQAEAAQAAAD4/wAAAQAEAAQAAAD4/wEAAQAEAAQAAAD4////AQAEAAQAAAD3////AQAEAAQAAAD3/wAAAQAEAAQAAAD3/wEAAQAEAAQAAAALAAAAAQAIAAMAAAALAAEAAQAIAAMAAAAOAAAAAQAIAAMAAAAPAAAAAQAIAAMAAAARAAAAAQAIAAMAAAARAP//AQAIAAMAAAASAP//AQAIAAMAAAAMAAAAAQAIAAEAAAANAAAAAQAIAAEAAAAQAAAAAQAIAAEAAAATAAEAAQAIAAEAAAAUAAEAAQAIAAEAAAAVAAEAAQAIAAEAAAA=")
 tile_set = SubResource("TileSet_lk0k7")
 rendering_quadrant_size = 32
 
-[node name="KillZone" parent="." instance=ExtResource("3_k83qp")]
+[node name="KillZone" parent="." instance=ExtResource("5_hphn2")]
 light_mask = 2
 visibility_layer = 2
 
@@ -217,21 +240,21 @@ visibility_layer = 2
 position = Vector2(77, 106)
 shape = SubResource("WorldBoundaryShape2D_2xdia")
 
-[node name="EntryTrap" parent="." instance=ExtResource("5_b8l1u")]
+[node name="EntryTrap" parent="." instance=ExtResource("6_uwk7i")]
 position = Vector2(80, -33)
 collision_layer = 2
 collision_mask = 2
 
-[node name="HammerTrap" parent="." instance=ExtResource("6_luagm")]
+[node name="HammerTrap" parent="." instance=ExtResource("7_in1eq")]
 position = Vector2(208, -32)
 
 [node name="Money" type="Node" parent="."]
 
-[node name="Money2" parent="Money" instance=ExtResource("7_sdxut")]
-position = Vector2(452, 348)
+[node name="Money2" parent="Money" instance=ExtResource("8_om68i")]
+position = Vector2(602, 328)
 
-[node name="Money" parent="Money" instance=ExtResource("7_sdxut")]
-position = Vector2(427, 358)
+[node name="Money" parent="Money" instance=ExtResource("8_om68i")]
+position = Vector2(577, 325)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
