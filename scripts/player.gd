@@ -41,6 +41,11 @@ func _physics_process(delta: float) -> void:
 	var isLeft = velocity.x < 0
 	mainCharacter.flip_h = is_facing_left
 	
+	if is_facing_left:
+		mainCharacter.position = Vector2(-8, -24)
+	else:
+		mainCharacter.position = Vector2(10, -24)
+	
 func play_dying_animation() -> void:
 	is_dead = true # Prevent further movement and animation updates
 	mainCharacter.animation = "dying"
