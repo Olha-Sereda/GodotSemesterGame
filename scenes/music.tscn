@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ykhtkiig0wik"]
+
+[ext_resource type="AudioStream" uid="uid://2o2ux40gjg5d" path="res://music/DavidKBD - Electric Pulse - 01 - Electric Pulse-full.ogg" id="1_82dxi"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+position = Vector2(9, -14)
+stream = ExtResource("1_82dxi")
+autoplay = true
+bus = &"Music"

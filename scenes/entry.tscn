@@ -117,7 +117,6 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ubiik"]
-size = Vector2(11, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lbwj"]
 size = Vector2(32, 62)
@@ -147,7 +146,6 @@ one_shot = true
 
 [node name="Killzone" type="CollisionShape2D" parent="." groups=["killer_shape"]]
 light_mask = 2
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_ubiik")
 disabled = true
 
