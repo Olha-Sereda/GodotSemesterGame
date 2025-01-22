@@ -1,24 +1,24 @@
-[gd_scene load_steps=21 format=4 uid="uid://dlfnhdpo72wsr"]
+[gd_scene load_steps=21 format=4 uid="uid://dqx50mv4reuse"]
 
-[ext_resource type="PackedScene" uid="uid://c1aw5aa3jhdc5" path="res://scenes/game_manadger.tscn" id="1_fxqfm"]
-[ext_resource type="Texture2D" uid="uid://cthcvol081ldg" path="res://assets/Background.png" id="2_bn2px"]
-[ext_resource type="PackedScene" uid="uid://r62c3iibuhyb" path="res://scenes/player.tscn" id="3_bm80c"]
-[ext_resource type="Texture2D" uid="uid://b1dphhgoo6kj6" path="res://assets/Tiles (1).png" id="4_01nen"]
-[ext_resource type="PackedScene" uid="uid://bytb7qbid6n0n" path="res://scenes/killzone.tscn" id="5_hphn2"]
-[ext_resource type="PackedScene" uid="uid://cqjcrc5ipjaap" path="res://scenes/entry.tscn" id="6_uwk7i"]
-[ext_resource type="PackedScene" uid="uid://b3qiaobymckju" path="res://scenes/hammer.tscn" id="7_in1eq"]
-[ext_resource type="PackedScene" uid="uid://ctum33to6grsl" path="res://scenes/money.tscn" id="8_om68i"]
-[ext_resource type="PackedScene" uid="uid://bexl1j52ulu5s" path="res://scenes/transporter.tscn" id="9_qm36t"]
-[ext_resource type="Texture2D" uid="uid://dxlgy51ppok20" path="res://assets/128x64.png" id="9_urbyr"]
-[ext_resource type="PackedScene" uid="uid://dky0kjlpugwhd" path="res://scenes/chest.tscn" id="10_63s5i"]
-[ext_resource type="PackedScene" uid="uid://bpn2js33k2f8m" path="res://scenes/backTransporter.tscn" id="11_b1oq0"]
-[ext_resource type="PackedScene" uid="uid://c0vddvln45xnr" path="res://scenes/screen.tscn" id="12_rr8ag"]
-[ext_resource type="PackedScene" uid="uid://befgn0sh7id1u" path="res://scenes/screen_2.tscn" id="13_5ht5c"]
-[ext_resource type="Script" path="res://scenes/finish.gd" id="14_gc5xw"]
-[ext_resource type="PackedScene" uid="uid://dqx50mv4reuse" path="res://scenes/level2.tscn" id="15_yh68w"]
+[ext_resource type="Texture2D" uid="uid://cthcvol081ldg" path="res://assets/Background.png" id="1_vwjgn"]
+[ext_resource type="PackedScene" uid="uid://c1aw5aa3jhdc5" path="res://scenes/game_manadger.tscn" id="2_xjpxv"]
+[ext_resource type="PackedScene" uid="uid://r62c3iibuhyb" path="res://scenes/player.tscn" id="3_0e4eq"]
+[ext_resource type="Texture2D" uid="uid://b1dphhgoo6kj6" path="res://assets/Tiles (1).png" id="4_ggoxf"]
+[ext_resource type="PackedScene" uid="uid://bytb7qbid6n0n" path="res://scenes/killzone.tscn" id="5_qxkeo"]
+[ext_resource type="PackedScene" uid="uid://cqjcrc5ipjaap" path="res://scenes/entry.tscn" id="6_owbb4"]
+[ext_resource type="PackedScene" uid="uid://b3qiaobymckju" path="res://scenes/hammer.tscn" id="7_ql60i"]
+[ext_resource type="PackedScene" uid="uid://ctum33to6grsl" path="res://scenes/money.tscn" id="8_udoxy"]
+[ext_resource type="PackedScene" uid="uid://bexl1j52ulu5s" path="res://scenes/transporter.tscn" id="9_hqr80"]
+[ext_resource type="PackedScene" uid="uid://dky0kjlpugwhd" path="res://scenes/chest.tscn" id="10_jih23"]
+[ext_resource type="PackedScene" uid="uid://bpn2js33k2f8m" path="res://scenes/backTransporter.tscn" id="11_qjkbi"]
+[ext_resource type="PackedScene" uid="uid://c0vddvln45xnr" path="res://scenes/screen.tscn" id="12_vwu7v"]
+[ext_resource type="PackedScene" uid="uid://befgn0sh7id1u" path="res://scenes/screen_2.tscn" id="13_15046"]
+[ext_resource type="Script" path="res://scenes/finish.gd" id="14_lxfcm"]
+[ext_resource type="Texture2D" uid="uid://dxlgy51ppok20" path="res://assets/128x64.png" id="15_m82ai"]
+[ext_resource type="PackedScene" uid="uid://ttwqwyorrmeo" path="res://scenes/main_menu.tscn" id="15_vefqp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tkjy"]
-texture = ExtResource("4_01nen")
+texture = ExtResource("4_ggoxf")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -208,7 +208,7 @@ offset_right = 1729.0
 offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_bn2px")
+texture = ExtResource("1_vwjgn")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -222,15 +222,15 @@ offset_right = 578.0
 offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_bn2px")
+texture = ExtResource("1_vwjgn")
 
-[node name="GameManadger" parent="." instance=ExtResource("1_fxqfm")]
+[node name="GameManadger" parent="." instance=ExtResource("2_xjpxv")]
 unique_name_in_owner = true
 
-[node name="Player" parent="." instance=ExtResource("3_bm80c")]
+[node name="Player" parent="." instance=ExtResource("3_0e4eq")]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(457, 22)
+position = Vector2(-338, 183)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
@@ -243,7 +243,7 @@ tile_map_data = PackedByteArray("AADu/wkAAQADAAEAAADu/wgAAQADAAEAAADu/wcAAQADAAE
 tile_set = SubResource("TileSet_lk0k7")
 rendering_quadrant_size = 32
 
-[node name="KillZone" parent="." instance=ExtResource("5_hphn2")]
+[node name="KillZone" parent="." instance=ExtResource("5_qxkeo")]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(-413, 84)
@@ -252,26 +252,26 @@ position = Vector2(-413, 84)
 position = Vector2(491, 280)
 shape = SubResource("WorldBoundaryShape2D_2xdia")
 
-[node name="EntryTrap" parent="." instance=ExtResource("6_uwk7i")]
+[node name="EntryTrap" parent="." instance=ExtResource("6_owbb4")]
 position = Vector2(-96, 235)
 rotation = 1.56628
 scale = Vector2(0.920542, 1)
 
-[node name="HammerTrap" parent="." instance=ExtResource("7_in1eq")]
+[node name="HammerTrap" parent="." instance=ExtResource("7_ql60i")]
 position = Vector2(-78, -37)
 
 [node name="Money" type="Node" parent="."]
 
-[node name="Money2" parent="Money" instance=ExtResource("8_om68i")]
+[node name="Money2" parent="Money" instance=ExtResource("8_udoxy")]
 position = Vector2(621, 400)
 
-[node name="Money" parent="Money" instance=ExtResource("8_om68i")]
+[node name="Money" parent="Money" instance=ExtResource("8_udoxy")]
 position = Vector2(553, 471)
 
-[node name="Money3" parent="Money" instance=ExtResource("8_om68i")]
+[node name="Money3" parent="Money" instance=ExtResource("8_udoxy")]
 position = Vector2(591, 436)
 
-[node name="Money4" parent="Money" instance=ExtResource("8_om68i")]
+[node name="Money4" parent="Money" instance=ExtResource("8_udoxy")]
 position = Vector2(827, 339)
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -295,58 +295,58 @@ text = "Points: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Transporter" parent="." instance=ExtResource("9_qm36t")]
+[node name="Transporter" parent="." instance=ExtResource("9_hqr80")]
 position = Vector2(-190, 236)
 scale = Vector2(1.34651, 1.75017)
 
-[node name="Chest" parent="." instance=ExtResource("10_63s5i")]
+[node name="Chest" parent="." instance=ExtResource("10_jih23")]
 position = Vector2(-337, 209)
 
-[node name="EntryTrap2" parent="." instance=ExtResource("6_uwk7i")]
+[node name="EntryTrap2" parent="." instance=ExtResource("6_owbb4")]
 position = Vector2(253, 47)
 rotation = -1.57105
 scale = Vector2(0.92736, 1.98164)
 skew = -0.000650764
 
-[node name="EntryTrap3" parent="." instance=ExtResource("6_uwk7i")]
+[node name="EntryTrap3" parent="." instance=ExtResource("6_owbb4")]
 position = Vector2(254, 77)
 rotation = -1.57105
 scale = Vector2(0.92736, 1.98164)
 skew = -0.000650764
 
-[node name="EntryTrap4" parent="." instance=ExtResource("6_uwk7i")]
+[node name="EntryTrap4" parent="." instance=ExtResource("6_owbb4")]
 position = Vector2(254, 108)
 rotation = -1.57105
 scale = Vector2(0.92736, 1.98164)
 skew = -0.000650764
 
-[node name="Chest2" parent="." instance=ExtResource("10_63s5i")]
+[node name="Chest2" parent="." instance=ExtResource("10_jih23")]
 position = Vector2(-324, 49)
 
-[node name="Transporter2" parent="." instance=ExtResource("9_qm36t")]
+[node name="Transporter2" parent="." instance=ExtResource("9_hqr80")]
 position = Vector2(-39, -125)
 scale = Vector2(1.34651, 1.75017)
 
-[node name="BackTransporter" parent="." instance=ExtResource("11_b1oq0")]
+[node name="BackTransporter" parent="." instance=ExtResource("11_qjkbi")]
 position = Vector2(381, 47)
 scale = Vector2(1.31998, 1.68)
 
-[node name="Screen" parent="." instance=ExtResource("12_rr8ag")]
+[node name="Screen" parent="." instance=ExtResource("12_vwu7v")]
 position = Vector2(75, -56)
 
-[node name="Screen2" parent="." instance=ExtResource("13_5ht5c")]
+[node name="Screen2" parent="." instance=ExtResource("13_15046")]
 position = Vector2(-562, -84)
 
 [node name="Finish" type="Area2D" parent="."]
 position = Vector2(625, -18)
 collision_mask = 3
-script = ExtResource("14_gc5xw")
-target_level = ExtResource("15_yh68w")
+script = ExtResource("14_lxfcm")
+target_level = ExtResource("15_vefqp")
 
 [node name="Billboard" type="Sprite2D" parent="Finish"]
 position = Vector2(-5, -68)
 scale = Vector2(1.44776, 1.6)
-texture = ExtResource("9_urbyr")
+texture = ExtResource("15_m82ai")
 
 [node name="PointsLabel" type="Label" parent="Finish/Billboard"]
 anchors_preset = 15
