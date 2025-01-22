@@ -6,6 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wotf7"]
 size = Vector2(32, 64)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubiik"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lbwj"]
+size = Vector2(32, 62)
+
 [sub_resource type="Animation" id="Animation_8umpn"]
 resource_name = "EntryAnimation"
 length = 3.0
@@ -116,22 +121,27 @@ _data = {
 "RESET": SubResource("Animation_44wpy")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubiik"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lbwj"]
-size = Vector2(32, 62)
-
 [node name="EntryTrap" type="Area2D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_8w4oi")
 
+[node name="DoorBlockShape" type="CollisionShape2D" parent="." groups=["door_block_shape"]]
+shape = SubResource("RectangleShape2D_wotf7")
+
+[node name="Killzone" type="CollisionShape2D" parent="." groups=["killer_shape"]]
+light_mask = 2
+shape = SubResource("RectangleShape2D_ubiik")
+disabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_2lbwj")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_nysd4")
 hframes = 8
-
-[node name="DoorBlockShape" type="CollisionShape2D" parent="." groups=["door_block_shape"]]
-shape = SubResource("RectangleShape2D_wotf7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")
@@ -143,16 +153,6 @@ autoplay = "EntryAnimation"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6
 one_shot = true
-
-[node name="Killzone" type="CollisionShape2D" parent="." groups=["killer_shape"]]
-light_mask = 2
-shape = SubResource("RectangleShape2D_ubiik")
-disabled = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_2lbwj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
