@@ -390,4 +390,10 @@ vertical_alignment = 1
 position = Vector2(206.5, 66)
 shape = SubResource("RectangleShape2D_gw3rj")
 
+[node name="EntryTrap6" parent="." instance=ExtResource("6_owbb4")]
+position = Vector2(-428, 274)
+rotation = 1.57174
+scale = Vector2(0.487399, 0.479998)
+skew = -0.000724316
+
 [connection signal="body_entered" from="Finish" to="Finish" method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://dlfnhdpo72wsr"]
+[gd_scene load_steps=22 format=4 uid="uid://dlfnhdpo72wsr"]
 
 [ext_resource type="PackedScene" uid="uid://c1aw5aa3jhdc5" path="res://scenes/game_manadger.tscn" id="1_fxqfm"]
 [ext_resource type="Texture2D" uid="uid://cthcvol081ldg" path="res://assets/Background.png" id="2_bn2px"]
@@ -193,6 +193,9 @@ sources/1 = SubResource("TileSetAtlasSource_4tkjy")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gw3rj"]
 size = Vector2(258, 139)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w56go"]
+size = Vector2(22, 64)
+
 [node name="Game" type="Node2D"]
 position = Vector2(575, 325)
 
@@ -230,7 +233,7 @@ unique_name_in_owner = true
 [node name="Player" parent="." instance=ExtResource("3_bm80c")]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(457, 22)
+position = Vector2(303, 18)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
@@ -381,5 +384,14 @@ vertical_alignment = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
 position = Vector2(-20, -25)
 shape = SubResource("RectangleShape2D_gw3rj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(322, 114)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4, -21)
+shape = SubResource("RectangleShape2D_w56go")
 
 [connection signal="body_entered" from="Finish" to="Finish" method="_on_body_entered"]
